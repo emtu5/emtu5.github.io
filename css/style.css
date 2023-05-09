@@ -1,0 +1,110 @@
+body {
+  margin: 0;
+  padding: 0;
+  margin-left: 10%;
+  margin-right: 10%;
+  max-width: 1120px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  background-color: rgb(198, 219, 226);
+}
+
+@media screen and (min-width: 1400px) {
+  body {
+    margin: auto;
+  }
+}
+
+header {
+  position: sticky;
+  top: 0;
+}
+
+header .logo {
+  background: #eea4a4;
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+header .logo img {
+  max-height:130px;
+  object-fit:contain;
+}
+
+@media screen and (max-width: 675px) {
+  header .logo img {
+    max-height: 19.2vw;
+  }
+}
+
+header .header-bar {
+  background: #ffc4c4;
+  display: flex;
+  padding-left: 1em;
+  padding-right: 1em;
+  justify-content: center;
+  gap: 8%;
+  text-align: center;
+}
+
+@media screen and (max-width: 675px) {
+  header .header-bar a {
+      font-size: 14px;
+  }
+}
+
+h1 {
+  margin-left: 1em;
+}
+
+.tile {
+  background: rgb(238,174,202);
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%); 
+  box-shadow: 2px 2px 1px rgb(0, 0, 0);
+  border-radius: 6px;
+  outline-width: 1px;
+  outline-style: solid;
+  outline-color: rgb(0, 0, 0);
+  margin: 1em;
+}
+
+.tile h2 {
+  text-align: center;
+  color: rgb(59, 9, 105);
+  margin: 10px;
+}
+
+.tile p {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.zoom {
+  transition: transform .2s;
+}
+
+.zoom:hover {
+  transform: scale(1.05);
+}
+
+.spin:hover {
+  animation-name: spin; 
+  animation-duration: 4s; 
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes spin {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(1800deg);}
+}
+
+a:hover {
+  color: #93003a;
+}
+
+a:link {
+  text-decoration: none;
+}
