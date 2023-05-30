@@ -1,0 +1,86 @@
+{
+    "easy_questions": {
+        "time" : 5000,
+        "questions" : [
+            {
+                "mechanic_question": {
+                    "question": "In what game was the MECHANIC mechanic introduced?",
+                    "mechanics": {
+                        "JQ1": ["Silver Spaces", "Buried Jewels", "Crow Relics"],
+                        "JQ2": ["Special Coins", "Monkeys", "Silver Coins", "Tournament Mode"],
+                        "JQ3": ["Monkey Cages", "Unswappable Jewels", "White Pearls", "Quartz Timepieces"],
+                        "JQ4": ["Lock and Key", "Limited Jewels Mode", "Swaps Mode"],
+                        "JQ5": ["Secret Entrance", "Pathfinding", "Disarm Trap", "Climbing"],
+                        "JQ6": ["Flood", "Cave-in", "Pathmaking", "Strangle Vine"],
+                        "JQ7": ["Collapse Mode", "Ship Wheels", "Diamond Storage Spaces"]
+                    }
+                },
+                "jewel_question": {
+                    "question": "Choose the JEWEL jewel.",
+                    "jewels": {
+                        "common": [2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 26],
+                        "buryable": [2, 5, 6, 13, 14, 15, 16, 17, 26]
+                    }
+                }
+            }
+        ]
+    },
+    "medium_questions":{
+        "time" : 10000,
+        "questions" : {
+            "single_answer": [
+                {
+                    "question": "Why does my level for JQ3 feature only 159 levels, instead of the usual 160?",
+                    "answer_type": "text",
+                    "answers": ["A bug that softlocks the savefile once it reaches 100% completion",
+                        "The tutorial level cannot be modified",
+                        "The final level cannot be modified",
+                        "Certain mechanics can only be used in certain regions"]
+                },
+                {
+                    "question": "Which of these types of Solitaire is the most similar to the one in JQS1?",
+                    "answer_type": "text",
+                    "answers": ["Tripeaks", "Pyramid", "Klondike", "Golf", "Spider"]
+                },
+                {
+                    "question": "Which of these types of Solitaire is the most similar to the one in JQS2?",
+                    "answer_type": "text",
+                    "answers": ["Pyramid", "Tripeaks", "Klondike", "Golf", "Spider"]
+                },
+                {
+                    "question": "In JQS1 and JQS2, Expert mode reduces the number of undos to what?",
+                    "answer_type": "text",
+                    "correct_answers": 1,
+                    "answers_required": 1,
+                    "answers": ["5", "10 (no change from Normal", "8", "7", "3"]
+                }
+            ]
+        }
+    },
+    "hard_questions":{
+        "time" : 15000,
+        "questions" : {
+            "classic_board_question": {
+                "question": "Which of these boards is always possible? (classic JQ2 rules, no specials)",
+                "correct": ["Work on this later"],
+                "wrong": ["Work on this later"]
+            },
+            "single_answer": [
+                {
+                    "question": "What do all JQ1 boards have in common?",
+                    "answer_type": "text",
+                    "answers": ["The top-most row of each board has no gaps",
+                        "They feature horizontal, vertical, or rotational symmetry",
+                        "They have at most 10 columns"]
+                },
+                {
+                    "question": "What do all JQ1 boards have in common?",
+                    "answer_type": "text",
+                    "answers": ["The top-most row of each board has no gaps",
+                        "They feature horizontal, vertical, or rotational symmetry",
+                        "They have at most 10 columns"]
+                }
+            ]
+        }
+    }
+}

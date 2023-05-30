@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/jqheditor.css">
+<!--  <link rel="stylesheet" type="text/css" href="css/canvas.css">-->
+  <script type="text/javascript" src="scripts/jqheditor.js" defer></script>
+<!--  <script type="text/javascript" src="scripts/jqhcanvas.js"></script>-->
+  <title>Miscellaneous</title>
+</head>
+<body>
+<header>
+  <div class="logo">
+    <a class="spin" href="index.html"><img src="assets/logo_symbol.svg" alt="blol"></a>
+    <a href="index.html"><img src="assets/logo_name.svg" alt="blol"></a>
+  </div>
+  <nav class="header-bar">
+    <a href="index.html">Home</a>
+    <a href="aboutme.html">About Me</a>
+    <a href="projects.html">Projects</a>
+    <a href="misc.html">Miscellaneous</a>
+  </nav>
+</header>
+<main>
+  <section>
+    <h1>Jewel Quest Heritage Board Editor</h1>
+    <div id="level-editor">
+      <div id="top-bar">
+        <div id="tile-selection">
+          <canvas id="hotbarCanvas"></canvas>
+          <!--        <img id="tileset" draggable="false">-->
+        </div>
+        <div id="top-buttons">
+          <button id="copy">Copy to Clipboard</button>
+          <button id="save">Save the Image</button>
+          <button id="reset">Reset Board</button>
+        </div>
+      </div>
+      <div id="bottom-content">
+        <canvas id="boardCanvas"></canvas>
+        <canvas id="jewelCanvas"></canvas>
+        <ul>
+          <li>test1</li>
+        </ul>
+      </div>
+      <div id="info">
+        <article>
+          <h2>Instructions</h2>
+          <ul>
+            <li>Select a tile type from the top-left with a click, then simply draw on the board.</li>
+            <li>Once you're satisfied with your layout, hit "Copy to Clipboard". This will copy the text required for the boards.cfge file.</li>
+            <li>On the right you may set additional parameters for the board (such as current jewels, time/expert time, etc.).</li>
+          </ul>
+          <h3>Notes</h3>
+          <ul>
+            <li>Although you can introduce tiles with id's 8 and C, they are not used in the vanilla game. A board with the former will crash as soon as it's loaded.</li>
+            <li>You cannot select more than 8 jewels on a board, as the game has only 8 slots for in-game jewels.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
+</html>

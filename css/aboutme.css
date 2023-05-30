@@ -9,18 +9,18 @@
     text-align: center;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 829px) {
     .about-grid  {
         display: flex;
         flex-direction: column;
     }
 }
 
-@media screen and (min-width: 801px) {
+@media screen and (min-width: 830px) {
     .about-grid {
         display: grid;
         grid-template-columns: 45% 25% 30%;
-        grid-template-rows: 50% 50%;
+        grid-template-rows: 66.5% 33.5%;
     }
 
     .silly {

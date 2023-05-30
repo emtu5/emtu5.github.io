@@ -1,12 +1,13 @@
 body {
-  margin: 0;
+  display: flex;
   padding: 0;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin: 0 10%;
   max-width: 1120px;
+  height: 100%;
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
   background-color: rgb(198, 219, 226);
+  flex-direction: column;
 }
 
 @media screen and (min-width: 1400px) {
@@ -37,9 +38,13 @@ header .logo img {
   header .logo img {
     max-height: 19.2vw;
   }
+  body {
+    margin: 0;
+  }
 }
 
 header .header-bar {
+  white-space: pre-line;
   background: #ffc4c4;
   display: flex;
   padding-left: 1em;
@@ -101,10 +106,30 @@ h1 {
   100% {transform: rotate(1800deg);}
 }
 
+#dibby[data-animate = yup] {
+  animation-name: bounce;
+  animation-duration: 0.2s;
+}
+
+@keyframes bounce {
+  0% {transform: scale(1, 1);}
+  15% {transform: scale(0.9, 1.1);}
+  20% {transform: scale(1.1, 0.9);}
+  100% {transform: scale(1, 1);}
+}
+
 a:hover {
   color: #93003a;
 }
 
 a:link {
   text-decoration: none;
+}
+
+.main-container {
+  flex: 1 0 auto
+}
+
+footer {
+  flex-shrink: 0;
 }

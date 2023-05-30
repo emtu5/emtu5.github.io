@@ -1,0 +1,19 @@
+
+.slides {
+    display: flex;
+    width: 240px;
+    height: 180px;
+}
+img.slide {
+    width: 100%;
+    object-fit: contain;
+    align-items: center;
+}
+
+.slide {
+    display: none;
+}
+
+.slide[data-active] {
+    display: block;
+}

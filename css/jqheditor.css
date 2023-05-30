@@ -1,0 +1,60 @@
+canvas {
+    display: block;
+    margin: 8px
+}
+
+#level-editor > *{
+    outline: #ffb800 ridge 6px;
+    margin: 6px;
+}
+#top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: radial-gradient(ellipse, rgba(85,107,47,1) 0%, rgba(55,73,17,1) 100%);
+}
+
+#top-bar > #tile-selection {
+
+    margin: 0;
+    padding: 0;
+}
+
+#top-bar > #top-buttons {
+    flex: 1;
+    display: flex;
+    justify-content: space-evenly;
+}
+#top-bar > #top-buttons *{
+    height: 50px;
+    font-size: 19px;
+    background: linear-gradient(180deg, rgb(255, 241, 163) 0%, rgb(255, 216, 52) 100%);
+    font-family: "BankGothic Md BT", serif;
+}
+
+#bottom-content {
+    display: flex;
+    background: radial-gradient(ellipse, rgba(128, 0, 0, 1) 0%, rgba(77, 0, 0, 1) 100%);
+}
+
+#info {
+    background: radial-gradient(ellipse, rgba(85, 107, 47, 1) 0%, rgba(55, 73, 17, 1) 100%);
+
+}
+
+#info article {
+    margin: 0;
+    padding: 10px;
+    color: white;
+    font-family: "BankGothic Md BT", serif;
+}
+
+#info h2, h3 {
+    margin: 0;
+    padding: 10px;
+}
+
+#info ul {
+    font-weight: normal;
+}
+
