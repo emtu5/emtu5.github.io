@@ -16,19 +16,23 @@
         "description": "Also not sure when this is coming out. Currently too busy with uni to focus on this.",
         "carousel": [
             "assets/jqhm2pack.png",
-            "assets/projects/jq3_1.png",
-            "assets/projects/jq3_2.png",
-            "assets/projects/jq3_3.png",
-            "assets/projects/jq3_4.png"
-        ],
-        "text": "Coming eventually...",
-        "hyperlink": null
+            "assets/projects/jq4_1.png",
+            "assets/projects/jq4_2.png",
+            "assets/projects/jq4_3.png",
+            "assets/projects/jq4_4.png"
+        ]
     },
     {
         "title": "emtu's Untitled Luxor Mod",
         "description": "I want to make a Luxor Mod at some point. Not sure if/when it's gonna come out.",
-        "image": null,
-        "text": "Coming eventually...",
-        "hyperlink": null
+        "text": "Coming eventually..."
+    },
+    {
+        "title": "JQH Board Editor",
+        "description": "A Jewel Quest Heritage",
+        "carousel": [
+            "assets/jqhm2pack.png"
+        ],
+        "hyperlink": "jqheditor.html"
     }
 ]
