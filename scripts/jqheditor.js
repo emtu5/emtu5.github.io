@@ -93,14 +93,21 @@ function addJewelToCollection(ev) {
     let x = getTileCoords(ev)
     let newJewel = boardHeight * x[1] + x[0] + 1;
     let index = currentJewelCollection.indexOf(newJewel)
-    if (index > -1 && newJewel < 32) {
-        currentJewelCollection.splice(index, 1)
-    }
-    else if (currentJewelCollection.length === 8) {
-        console.log("no way")
-    }
-    else {
-        currentJewelCollection.push(newJewel)
+    if (newJewel < 32) {
+        if (index > -1) {
+            currentJewelCollection.splice(index, 1)
+        }
+        else if (currentJewelCollection.length === 8) {
+            let para = document.getElementById("status")
+            para.style.color = "rgb(255, 0, 0)"
+            para.innerHTML = "TOO MANY TYPES"
+            setTimeout(() => {
+                para.innerHTML = ""
+            }, 2000)
+        }
+        else {
+            currentJewelCollection.push(newJewel)
+        }
     }
     drawJewel()
 }
@@ -109,6 +116,7 @@ canvasHotbar.addEventListener("mousedown", ev => {
     isMouseDown = true
     changeSelection(ev)
     console.log(currentTileSelectionLeft)
+    ev.stopImmediatePropagation()
 })
 
 canvasHotbar.addEventListener("mousemove", ev => {
@@ -116,12 +124,16 @@ canvasHotbar.addEventListener("mousemove", ev => {
         changeSelection(ev)
         console.log(currentTileSelectionLeft)
     }
+
 })
 
 canvasHotbar.addEventListener("contextmenu", ev => {
     ev.preventDefault()
 })
 
+// canvasHotbar.addEventListener("mouseleave", ev => {
+//     isMouseDown = false
+// })
 canvasBoard.addEventListener("contextmenu", ev => {
     ev.preventDefault()
 })
@@ -136,6 +148,7 @@ canvasBoard.addEventListener("mousemove", ev => {
         drawTile(ev)
         console.log(currentTileSelectionLeft)
     }
+
 })
 
 canvasHotbar.addEventListener("mousedown", ev => {
@@ -155,8 +168,9 @@ window.addEventListener("mouseup", () => {
     isRightClick = false;
 })
 
-copy.addEventListener("click", () => {
-    let stringBoard = ''
+function addBoardAndJewels(stringBoard){
+    // board
+
     stringBoard += 'rowa='
     for (let i = 0; i < boardWidth; i++) {
         if (board[0][i].type < 10) {
@@ -179,10 +193,21 @@ copy.addEventListener("click", () => {
         }
         stringBoard += '\n'
     }
+
+    // jewel selection
+
+    for (let i = 0; i < currentJewelCollection.length; i++) {
+        stringBoard += `item${i + 1}type=${currentJewelCollection[i]}\n`
+    }
     navigator.clipboard.writeText(stringBoard).then(() => {
-        console.log("yippee")
+        let para = document.getElementById("status")
+        para.style.color = "rgb(0, 255, 0)"
+        para.innerHTML = "COPIED SUCCESFULLY"
+        setTimeout(() => {
+            para.innerHTML = ""
+        }, 2000)
     })
-})
+}
 
 save.addEventListener('click', () => {
     window.open(canvasBoard.toDataURL("image/png"), '_blank');
@@ -201,7 +226,6 @@ window.onload = () => {
     // init
     board = JSON.parse(localStorage.getItem('jqhboard'))
     if(!board) {
-        console.log("aaabbbbbb")
         board = []
         for (let i = 0; i < boardHeight; i++) {
             let row = []
@@ -218,3 +242,57 @@ window.onload = () => {
     drawHotbar()
     drawJewel()
 }
+
+document.querySelector("form").addEventListener("submit", ev => {
+    ev.preventDefault()
+    let clipboardString= ""
+    let formdata = new FormData(document.querySelector("form"))
+
+    //board and timer
+    switch (formdata.get("board-type")) {
+        case "Classic Board":
+            clipboardString += "boardType=boardtype_standard\n"
+            break
+        case "Swaps Board":
+            clipboardString += "boardType=boardtype_swaps\n"
+            break
+        case "Limited Jewels Board":
+            clipboardString += "boardType=boardtype_limited\n"
+            break
+    }
+    let timer = formdata.get("time-info")
+    let numbers = timer.match(/\d+/g);
+    clipboardString += "time=" + numbers[0] + "\n"
+    if (numbers[1]) {
+        clipboardString += "timeExpert=" + numbers[1] + "\n"
+    }
+
+    //blocked goal
+    switch (formdata.get("blocked-coin-type")) {
+        case "aztec": {
+            clipboardString += "extraGoal=1\n"
+            break
+        }
+        case "silver": {
+            clipboardString += "extraGoal=6\nsilverCoinsEnabled=1\n"
+            break
+        }
+    }
+
+    // silver spaces
+    if(formdata.get("silver-goal")) {
+        clipboardString += "boardGoal=2\n"
+    }
+    else {
+        clipboardString += "boardGoal=1\n"
+    }
+
+    // specials
+    if(formdata.get("specials")) {
+        clipboardString += "specialButtonEnabled=1\n"
+    }
+
+    addBoardAndJewels(clipboardString)
+    // console.log(numbers)
+    // console.log(new FormData(document.querySelector("form")))
+})

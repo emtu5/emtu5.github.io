@@ -29,9 +29,9 @@
     },
     {
         "title": "JQH Board Editor",
-        "description": "A Jewel Quest Heritage",
+        "description": "A Jewel Quest Heritage Board Editor. Currently, it can be used to draw a normal board layout, and set a few board parameters.",
         "carousel": [
-            "assets/jqhm2pack.png"
+            "assets/projects/jqhb.png"
         ],
         "hyperlink": "jqheditor.html"
     }

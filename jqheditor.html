@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/jqheditor.css">
-<!--  <link rel="stylesheet" type="text/css" href="css/canvas.css">-->
   <script type="text/javascript" src="scripts/jqheditor.js" defer></script>
-<!--  <script type="text/javascript" src="scripts/jqhcanvas.js"></script>-->
   <title>Miscellaneous</title>
 </head>
 <body>
@@ -33,7 +31,6 @@
           <!--        <img id="tileset" draggable="false">-->
         </div>
         <div id="top-buttons">
-          <button id="copy">Copy to Clipboard</button>
           <button id="save">Save the Image</button>
           <button id="reset">Reset Board</button>
         </div>
@@ -41,9 +38,53 @@
       <div id="bottom-content">
         <canvas id="boardCanvas"></canvas>
         <canvas id="jewelCanvas"></canvas>
-        <ul>
-          <li>test1</li>
-        </ul>
+        <div id="right-side">
+          <form>
+            <fieldset>
+              <legend>Board Settings</legend>
+              <label>Board Type:
+                <select name="board-type">
+                  <option>Classic Board</option>
+                  <option>Swaps Board</option>
+                  <option>Limited Jewels Board</option>
+                </select>
+              </label> <br>
+              <label>Time (Normal / Expert):
+                <input type="text" pattern="\s*\d+(\/\d+)?\s*" name="time-info" width="75px">
+              </label>
+              <p>###(/###), expert time optional</p>
+            </fieldset>
+            <fieldset>
+              <legend>Blocked Spaces Extra Goal</legend>
+              <label>
+                None
+                <input type="radio" name="blocked-coin-type" value="none">
+              </label>
+              <label>
+                Aztec C.
+                <input type="radio" name="blocked-coin-type" value="aztec">
+              </label>
+              <label>
+                Silver C.
+                <input type="radio" name="blocked-coin-type" value="silver">
+              </label>
+            </fieldset>
+            <fieldset>
+              <legend>Other</legend>
+              <label>
+                Silver Tiles:
+                <input type="checkbox" name="silver-goal" checked="">
+              </label>
+              <label>
+                Specials:
+                <input type="checkbox" name="specials" checked="">
+              </label>
+            </fieldset>
+            <button type="submit" id="copy">Copy to Clipboard</button>
+          </form>
+          <p id="status"></p>
+        </div>
+
       </div>
       <div id="info">
         <article>

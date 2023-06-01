@@ -106,7 +106,7 @@ h1 {
   100% {transform: rotate(1800deg);}
 }
 
-#dibby[data-animate = yup] {
+.dibby[data-animate = yup] {
   animation-name: bounce;
   animation-duration: 0.2s;
 }
@@ -132,4 +132,8 @@ a:link {
 
 footer {
   flex-shrink: 0;
+}
+
+.noselect {
+  user-select: none;
 }

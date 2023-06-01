@@ -16,10 +16,15 @@ header p {
     object-fit:contain;
 }
 
-.noselect {
-    user-select: none;
+footer {
+    display: flex;
+    position: absolute;
+    bottom: 0;
 }
 
+.dibby {
+    width: 25%;
+}
 @media screen and (max-width: 1100px) {
     .homebuttons img {
       max-width: 38vw;

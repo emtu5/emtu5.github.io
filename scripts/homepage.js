@@ -2,9 +2,8 @@ let quotes = null
 let dibby = null
 let quoteCounter = null
 let hbar = null
-const dibbyButton = document.getElementById("dibby")
 
-fetch("assets/jason/quotes.json")
+fetch("assets/jason/homepage.json")
     .then(response => response.json())
     .then(data => {
         prep(data)
@@ -22,19 +21,12 @@ function getRandomQuote() {
     return quotes[Math.floor(Math.random()*quotes.length)]
 }
 
-dibbyButton.addEventListener("click", () => {
-    if(dibbyButton.dataset.animate === "nope") {
-        dibbyButton.dataset.animate = "yup"
-        quoteCounter++;
-        if (quoteCounter % 10 === 0) {
-            hbar.innerHTML = dibby
-        }
-        else {
-            hbar.innerHTML = getRandomQuote()
-        }
-
-        setTimeout(() => {
-            dibbyButton.dataset.animate = "nope"
-        }, 200)
+function moreDibbyActions() {
+    quoteCounter++
+    if (quoteCounter % 10 === 0) {
+        hbar.innerHTML = dibby
     }
-})
+    else {
+        hbar.innerHTML = getRandomQuote()
+    }
+}

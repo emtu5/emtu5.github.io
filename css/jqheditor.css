@@ -30,7 +30,7 @@ canvas {
     justify-content: space-evenly;
 }
 
-#top-bar > #top-buttons *{
+#copy, #reset, #save{
     height: 50px;
     font-size: 19px;
     background: linear-gradient(180deg, rgb(255, 241, 163) 0%, rgb(255, 216, 52) 100%);
@@ -41,6 +41,12 @@ canvas {
     display: flex;
     background: radial-gradient(ellipse, rgba(128, 0, 0, 1) 0%, rgba(77, 0, 0, 1) 100%);
 }
+
+#bottom-content form{
+    flex: 1;
+    margin-right: 3px;
+}
+
 
 #info {
     background: radial-gradient(ellipse, rgba(85, 107, 47, 1) 0%, rgba(55, 73, 17, 1) 100%);
@@ -59,7 +65,24 @@ canvas {
     padding: 10px;
 }
 
+form {
+    font-family: "BankGothic Md BT", serif;
+    font-weight: normal;
+    color: white;
+}
+
+#right-side p {
+    margin: 0.1em 0;
+}
+
+#copy {
+    margin: 6px 2px;
+}
+
 #info ul {
     font-weight: normal;
 }
 
+@media screen and (max-width: 1085px) {
+
+}
